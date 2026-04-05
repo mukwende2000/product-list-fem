@@ -1,6 +1,7 @@
 import classes from './App.module.css'
 import ProductCard from './components/ProductCard'
 import CartItem from './components/CartItem'
+import Cart from './components/Cart'
 
 function App() {
 
@@ -19,15 +20,7 @@ function App() {
           <ProductCard />
         </ul>
       </div>
-      <div>
-        <h2>Your Cart (7)</h2>
-        <ul>
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-        </ul>
-      </div>
+      <Cart />
     </main>
   )
 }

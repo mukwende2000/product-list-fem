@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 
+  --color-white: hsl(0, 100%, 100%);
   --color-red: hsl(14, 86%, 42%);
   --color-greed: hsl(159, 69%, 38%);
   --color-rose-50: hsl(20, 50%, 98%);
@@ -15,9 +16,12 @@
 
 body {
   font-family: "Red Hat Text", sans-serif;
+  background-color: var(--color-rose-50);
 }
 
-
+button {
+  cursor: pointer;
+}
 
 main {
   width: 100%;

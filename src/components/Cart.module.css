@@ -1,0 +1,26 @@
+.cart {
+    background-color: var(--color-white);
+    padding: 16px;
+    border-radius: 10px;
+    flex-basis: 30%;
+}
+
+.totalOrder {
+    margin-block: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.totalOrder p:last-of-type {
+    font-weight: 900;
+}
+
+.confirmBtn {
+    width: 100%;
+    border: none;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    border-radius: 20px;
+    padding-block: 10px;
+    font-size: 1rem;
+}
