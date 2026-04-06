@@ -28,16 +28,16 @@ img {
     width: initial;
 }
 
-.generalProductName {
+.category {
     color: var(--color-rose-400);
 }
 
-.specificProductName {
+.name {
     font-weight: 600;
     margin-block: 5px;
 }
 
-.productPrice {
+.price {
     color: var(--color-red);
     font-weight: 600;
 }

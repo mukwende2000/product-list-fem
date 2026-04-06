@@ -1,7 +1,7 @@
 import classes from './App.module.css'
 import ProductCard from './components/ProductCard'
-import CartItem from './components/CartItem'
 import Cart from './components/Cart'
+import data from './data.json'
 
 function App() {
 
@@ -10,14 +10,15 @@ function App() {
       <div>
         <h1>Deserts</h1>
         <ul className={classes.productList}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          {data.map((product) => {
+            return <ProductCard
+              dkImage={product.image.desktop}
+              mobileImage={product.image.mobile}
+              name={product.name}
+              category={product.category}
+              price={product.price}
+            />
+          })}
         </ul>
       </div>
       <Cart />
