@@ -1,28 +1,21 @@
 import classes from './App.module.css'
-import ProductCard from './components/ProductCard'
 import Cart from './components/Cart'
-import data from './data.json'
+import { useState } from 'react'
+import CartContext from './context/CartContext'
+import ProductList from './components/ProductList'
 
 function App() {
-
+  const [cart, setCart] = useState([])
   return (
-    <main className={classes.main}>
-      <div>
-        <h1>Deserts</h1>
-        <ul className={classes.productList}>
-          {data.map((product) => {
-            return <ProductCard
-              dkImage={product.image.desktop}
-              mobileImage={product.image.mobile}
-              name={product.name}
-              category={product.category}
-              price={product.price}
-            />
-          })}
-        </ul>
-      </div>
-      <Cart />
-    </main>
+    <CartContext.Provider value={{ cart, setCart }} >
+
+      <main className={classes.main}>
+        <div>
+          <ProductList />
+        </div>
+        <Cart />
+      </main>
+    </CartContext.Provider >
   )
 }
 

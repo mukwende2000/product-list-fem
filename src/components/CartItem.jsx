@@ -1,7 +1,15 @@
 import { FaTimes } from 'react-icons/fa'
 import classes from './CartItem.module.css'
+import { useContext } from 'react'
+import CartContext from '../context/CartContext'
 
-function CartItem({ productName, quantity, price, totalPrice }) {
+function CartItem({ productName, quantity, price, totalPrice, onItemClick }) {
+    const state = useContext(CartContext)
+
+    const handleClick = (id) => {
+
+    }
+
     return (
         <li className={classes.cartItem}>
             <div>
@@ -13,7 +21,7 @@ function CartItem({ productName, quantity, price, totalPrice }) {
                     <span className={classes.totalPrice}> ${totalPrice}</span>
                 </p>
             </div>
-            <button className={classes.delBtn}>
+            <button onClick={onItemClick} className={classes.delBtn}>
                 <FaTimes />
             </button>
         </li>

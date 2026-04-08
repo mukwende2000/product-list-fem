@@ -1,15 +1,34 @@
+import { useContext } from 'react'
 import classes from './Cart.module.css'
 import CartItem from './CartItem'
+import CartContext from '../context/CartContext'
 
 
 function Cart() {
+    const state = useContext(CartContext)
+    const handleClick = (id) => {
+        console.log(id)
+
+        const filterCart = state.cart.filter((item) => item.product.id !== id)
+        state.setCart(filterCart)
+    }
     return (
         <div className={classes.cart}>
-            <h2>Your Cart (7)</h2>
+            <h2>Your Cart ({state.cart.length})</h2>
             <ul>
-                <CartItem productName='Classic Tiramisu' quantity='1' price='5.50' totalPrice='5.50' />
-                <CartItem productName='Vanilla Bean Creme Brulee' quantity='4' price='7.00' totalPrice='28.00' />
-                <CartItem productName='Vanilla Panna Cotta' quantity='2' price='6.50' totalPrice='13.00' />
+                {
+                    state.cart.map((item) => {
+                        return <CartItem
+                            id={item.product.id}
+                            key={item.product.id}
+                            productName={item.product.name}
+                            quantity={item.quantity}
+                            price={item.product.price}
+                            totalPrice={item.product.price * item.quantity}
+                            onItemClick={() => handleClick(item.product.id)}
+                        />
+                    })
+                }
             </ul>
             <div className={classes.totalOrder}>
                 <p>Order Total</p>
