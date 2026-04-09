@@ -1,0 +1,29 @@
+.orderItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.leftSide {
+    display: flex;
+    gap: 10px;
+}
+
+.name {
+    font-weight: 500;
+    color: var(--color-rose-500);
+}
+
+.quantity {
+    font-weight: 500;
+    color: var(--color-red);
+}
+
+.price {
+    color: var(--color-rose-300);
+}
+
+.totalPrice {
+    font-weight: 400;
+}

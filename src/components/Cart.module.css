@@ -24,3 +24,12 @@
     padding-block: 10px;
     font-size: 1rem;
 }
+
+.emptyCartText {
+    color: var(--color-rose-400);
+    font-weight: 500;
+}
+
+img {
+    width: 150px;
+}

@@ -3,7 +3,18 @@ import classes from './ProductCard.module.css'
 import { useContext } from 'react'
 import CartContext from '../context/CartContext'
 
-function ProductCard({ category, name, price, dkImage, mobileImage, onProductClick, inCart, quantity }) {
+function ProductCard({
+    category,
+    name,
+    price,
+    dkImage,
+    mobileImage,
+    onProductClick,
+    inCart,
+    quantity,
+    onIncreaseBtnClick,
+    onDecreaseBtnClick }) {
+
     const state = useContext(CartContext)
     // console.log(inCart)
 
@@ -15,9 +26,9 @@ function ProductCard({ category, name, price, dkImage, mobileImage, onProductCli
             </picture>
 
             {inCart ? <div className={classes.incrementBtn}>
-                <button>+</button>
+                <button className={classes.decrementBtn} disabled={quantity < 2} onClick={onDecreaseBtnClick}>-</button>
                 <span>{quantity}</span>
-                <button>-</button>
+                <button onClick={onIncreaseBtnClick}>+</button>
             </div> :
 
                 <button onClick={onProductClick} className={classes.cartBtn}>

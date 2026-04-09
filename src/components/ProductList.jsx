@@ -19,6 +19,22 @@ function ProductList() {
 
         state.setCart([...state.cart, { product, quantity: 1 }])
     }
+
+    const handleIncrement = (id) => {
+        const newCart = state.cart.map(item => {
+            return item.product.id === id ? { ...item, quantity: item.quantity + 1 } : item
+        })
+
+        state.setCart(newCart)
+    }
+
+    const handleDecrement = (id) => {
+        const newCart = state.cart.map(item => {
+            return item.product.id === id ? { ...item, quantity: item.quantity - 1 } : item
+        })
+
+        state.setCart(newCart)
+    }
     return (
         <>
             <h1>Deserts</h1>
@@ -26,12 +42,10 @@ function ProductList() {
                 {products.map((product, index, arr) => {
                     const cartItem = state.cart.find(item => item.product.id === product.id)
                     // const quantity = cartItem?.quantity ?? 0
-                    const quantity = cartItem ? cartItem.quantity : 0
-
                     return <ProductCard
                         key={product.id}
                         inCart={state.cart.some(el => el.product.id === product.id)}
-                        quantity={quantity}
+                        quantity={cartItem ? cartItem.quantity : 0}
                         id={product.id}
                         dkImage={product.image.desktop}
                         mobileImage={product.image.mobile}
@@ -39,6 +53,8 @@ function ProductList() {
                         category={product.category}
                         price={product.price}
                         onProductClick={() => handleClick(product.id)}
+                        onIncreaseBtnClick={() => handleIncrement(product.id)}
+                        onDecreaseBtnClick={() => handleDecrement(product.id)}
                     />
                 })}
             </ul>

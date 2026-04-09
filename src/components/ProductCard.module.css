@@ -76,3 +76,7 @@ img {
     color: var(--color-red);
     font-weight: 600;
 }
+
+.decrementBtn:disabled {
+    color: gray;
+}
