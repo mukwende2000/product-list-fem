@@ -7,8 +7,9 @@ import Checkout from './components/Checkout'
 
 function App() {
   const [cart, setCart] = useState([])
+  const [placeOrder, setPlaceOrder] = useState(false)
   return (
-    <CartContext.Provider value={{ cart, setCart }} >
+    <CartContext.Provider value={{ cart, setCart, placeOrder, setPlaceOrder }} >
 
       <main className={classes.main}>
         <div>

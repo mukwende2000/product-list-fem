@@ -14,8 +14,17 @@ function Cart() {
     }
 
     const totalOrder = () => {
+        const totalOrder = state.cart.reduce((sum, item) => {
+            return sum + item.product.price * item.quantity
+        }, 0)
 
+        return totalOrder
     }
+
+    const handleConfirmOrder = () => {
+        state.setPlaceOrder((prev) => !prev)
+    }
+
     return (
         <div className={classes.cart}>
             <h2>Your Cart ({state.cart.length})</h2>
@@ -40,9 +49,9 @@ function Cart() {
             {state.cart.length ?
                 <><div className={classes.totalOrder}>
                     <p>Order Total</p>
-                    <p>$46.50</p>
+                    <p>${totalOrder()}.00</p>
                 </div>
-                    <button className={classes.confirmBtn}>
+                    <button onClick={handleConfirmOrder} className={classes.confirmBtn}>
                         Confirm Order
                     </button>
                 </> :

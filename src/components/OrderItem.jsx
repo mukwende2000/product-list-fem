@@ -1,16 +1,16 @@
 import classes from './OrderItem.module.css'
 import cakeThumbnail from '/image-cake-thumbnail.jpg'
-function OrderItem() {
+function OrderItem({ productName, price, totalPrice, thumbnail, quantity }) {
     return (
         <li className={classes.orderItem}>
             <div className={classes.leftSide}>
-                <img src={cakeThumbnail} alt="" />
+                <img src={thumbnail} alt={`${productName} image`} />
                 <div>
-                    <p className={classes.name}>Classic Tiramisu</p>
-                    <p><span className={classes.quantity}>1x</span> <span className={classes.price}>@ $5.50</span></p>
+                    <p className={classes.name}>{productName}</p>
+                    <p><span className={classes.quantity}>{quantity}x</span> <span className={classes.price}>@ ${price}.00</span></p>
                 </div>
             </div>
-            <p className={classes.totalPrice}>$5.50</p>
+            <p className={classes.totalPrice}>${totalPrice}.00</p>
         </li>
     )
 }
