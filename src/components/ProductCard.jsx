@@ -16,8 +16,6 @@ function ProductCard({
     onDecreaseBtnClick }) {
 
     const state = useContext(CartContext)
-    // console.log(inCart)
-
     return (
         <div className={classes.productCard}>
             <picture>
@@ -25,8 +23,8 @@ function ProductCard({
                 <img src={mobileImage} alt='waffles' />
             </picture>
 
-            {inCart ? <div className={classes.incrementBtn}>
-                <button className={classes.decrementBtn} disabled={quantity < 2} onClick={onDecreaseBtnClick}>-</button>
+            {inCart ? <div className={classes.quantity}>
+                <button disabled={quantity < 2} onClick={onDecreaseBtnClick}>-</button>
                 <span>{quantity}</span>
                 <button onClick={onIncreaseBtnClick}>+</button>
             </div> :

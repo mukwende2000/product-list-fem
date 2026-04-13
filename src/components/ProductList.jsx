@@ -37,7 +37,7 @@ function ProductList() {
     }
     return (
         <>
-            <h1>Deserts</h1>
+            <h1 className={classes.header}>Deserts</h1>
             <ul className={classes.productList}>
                 {products.map((product, index, arr) => {
                     const cartItem = state.cart.find(item => item.product.id === product.id)

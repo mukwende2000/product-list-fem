@@ -5,6 +5,14 @@
     flex-basis: 30%;
 }
 
+.cart h2 {
+    color: var(--color-red);
+}
+
+.cart img {
+    /* width: 100px; */
+}
+
 .totalOrder {
     margin-block: 30px;
     display: flex;

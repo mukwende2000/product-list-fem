@@ -49,7 +49,7 @@ function Cart() {
             {state.cart.length ?
                 <><div className={classes.totalOrder}>
                     <p>Order Total</p>
-                    <p>${totalOrder()}.00</p>
+                    <p>${totalOrder()}</p>
                 </div>
                     <button onClick={handleConfirmOrder} className={classes.confirmBtn}>
                         Confirm Order

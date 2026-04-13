@@ -12,6 +12,11 @@ function Checkout() {
         state.placeOrder ? dialogRef.current.showModal() : dialogRef.current.close()
     }, [state.placeOrder])
 
+    const handleClick = () => {
+        state.setCart([])
+        dialogRef.current.close()
+    }
+
     return (
         <dialog className={classes.modal} ref={dialogRef}>
             <img src={checkmark} alt="" />
@@ -20,7 +25,9 @@ function Checkout() {
             <ul> {
                 state.cart.map((cartItem) => {
                     const item = cartItem.product
+                    console.log(item)
                     return <OrderItem
+                        key={item.id}
                         productName={item.name}
                         price={item.price}
                         quantity={cartItem.quantity}
@@ -30,7 +37,7 @@ function Checkout() {
 
                 })}
             </ul>
-            <button>Start New Order</button>
+            <button onClick={handleClick}>Start New Order</button>
         </dialog>
 
     )

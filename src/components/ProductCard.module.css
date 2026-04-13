@@ -22,9 +22,16 @@ img {
     position: absolute;
     left: 30%;
     bottom: 55px;
+    transition: .4s;
 }
 
-.incrementBtn {
+.cartBtn:hover {
+    color: var(--color-red);
+    outline: 1px solid var(--color-red);
+
+}
+
+.quantity {
     border-radius: 20px;
     border: none;
     outline: 1px solid var(--color-rose-400);
@@ -41,7 +48,7 @@ img {
     bottom: 55px;
 }
 
-.incrementBtn button {
+.quantity button {
     border: none;
     border-radius: 50%;
 
@@ -57,6 +64,17 @@ img {
     background-color: transparent;
     color: var(--color-white);
     outline: 1px solid var(--color-white);
+    transition: .3s;
+}
+
+.quantity button:hover {
+    color: var(--color-red);
+    background-color: var(--color-white);
+    outline: 1px solid var(--color-red);
+}
+
+.quantity span {
+    color: var(--color-white);
 }
 
 .cartBtn img {
