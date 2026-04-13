@@ -41,7 +41,7 @@ function ProductList() {
             <ul className={classes.productList}>
                 {products.map((product, index, arr) => {
                     const cartItem = state.cart.find(item => item.product.id === product.id)
-                    // const quantity = cartItem?.quantity ?? 0
+
                     return <ProductCard
                         key={product.id}
                         inCart={state.cart.some(el => el.product.id === product.id)}

@@ -9,10 +9,6 @@
     color: var(--color-red);
 }
 
-.cart img {
-    /* width: 100px; */
-}
-
 .totalOrder {
     margin-block: 30px;
     display: flex;
