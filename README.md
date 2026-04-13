@@ -42,8 +42,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here]()
-- Live Site URL: [Add live site URL here](https://product-list-fem.vercel.app/)
+- Solution URL: [https://www.frontendmentor.io/challenges/product-list-with-cart-5MmqLVAp_d]
+- Live Site URL: [https://product-list-fem.vercel.app/]
 ## My process
 
 ### Built with
@@ -87,6 +87,6 @@ I got stuck at one point when trying to query an item from the cart and use it's
 
 ## Author
 
-- Website - [Add your name here](https://www.mukwende.vercel.app)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/mukwende2000)
-- Twitter - [@yourusername](https://x.com/Mukwende16)
+- Website - [https://www.mukwende.vercel.app]
+- Frontend Mentor - [https://www.frontendmentor.io/profile/mukwende2000]
+- Twitter - [https://www.frontendmentor.io/profile/mukwende2000)]

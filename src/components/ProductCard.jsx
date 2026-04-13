@@ -17,7 +17,7 @@ function ProductCard({
 
     const state = useContext(CartContext)
     return (
-        <div className={classes.productCard}>
+        <li className={classes.productCard}>
             <picture>
                 <source media='(min-width: 1440px)' srcSet={dkImage} />
                 <img src={mobileImage} alt='waffles' />
@@ -38,7 +38,7 @@ function ProductCard({
             <p className={classes.category}>{category}</p>
             <p className={classes.name}>{name}</p>
             <p className={classes.price}>{price}</p>
-        </div>
+        </li>
     )
 }
 
